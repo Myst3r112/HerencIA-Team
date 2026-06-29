@@ -7,7 +7,7 @@ Feature: Consulta rapida del patrimonio
 
     Scenario: E1 - Tiempo de respuesta exitoso     
         Given que existen bienes registrados en el inventario,  
-        When cuando consulto el listado, aplico filtros o abro el resumen patrimonial   , 
+        When cuando consulto el listado, aplico filtros o abro el resumen patrimonial, 
         Then entonces al menos el 95 % de las consultas responde en un máximo de 3 segundos en condiciones normales de operación.
 
         # Input:  

@@ -1,6 +1,6 @@
 # EP-06 Solicitud de activacion post mortem
 # US-32 Confirmacion confiable del envio
-Feature:  Confirmacion confiable del envio
+Feature: Confirmacion confiable del envio
     Como heredero, 
     quiero recibir una confirmación después de enviar mi solicitud de activación, 
     para saber que la plataforma registró correctamente mi trámite.
