@@ -11,21 +11,33 @@ Feature: Proteccion de evidencia presentada
         Then el sistema protege la información mediante una conexión cifrada 
         And restringe su consulta a perfiles autorizados.
 
-        Input:
-        - Archivo enviado: Archivo adjuntado por el heredero solicitante.
+        # Input:
+        # - Archivo enviado: Archivo adjuntado por el heredero solicitante.
+        Examples: INPUT
+          | Archivo enviado   |
+          | Archivo adjuntado |
 
-        Output:
-        - Cifrado de datos: Protocolo de seguridad HTTPS activo durante todo el viaje de los paquetes de red.
-        - Seguridad en reposo: Archivo guardado en el servidor con encriptación criptográfica algorítmica.
-        - Restricción: Acceso denegado a cualquier petición publica y visualización permitida únicamente a tokens con rol de “Asesor legal”
+        # Output:
+        # - Cifrado de datos: Protocolo de seguridad HTTPS activo durante todo el viaje de los paquetes de red.
+        # - Seguridad en reposo: Archivo guardado en el servidor con encriptación criptográfica algorítmica.
+        # - Restricción: Acceso denegado a cualquier petición publica y visualización permitida únicamente a tokens con rol de “Asesor legal”
+        Examples: OUTPUT
+          | Cifrado de datos              | Seguridad en reposo      | Restricción           |
+          | Protocolo de seguridad activo | Archivo con encriptación | acceso “Asesor legal” |
 
     Scenario: E2 - Registro de acceso a evidencia 
         Given que un perfil autorizado abre la evidencia presentada, 
         When accede al archivo, 
         Then el sistema registra la fecha, el usuario y la acción realizada.
 
-        Input:
-        - Petición de lectura: Clic de un asesor legal autenticado para abrir el archivo adjunto.
+        # Input:
+        # - Petición de lectura: Clic de un asesor legal autenticado para abrir el archivo adjunto.
+        Examples: INPUT
+          |                 Petición de lectura                    |
+          | asesor legal autenticado para abrir el archivo adjunto |
 
-        Output:
-        - Log de auditoria: Nueva línea inalterable escrita de forma automática en la bitácora de seguridad
+        # Output:
+        # - Log de auditoria: Nueva línea inalterable escrita de forma automática en la bitácora de seguridad
+        Examples: OUTPUT
+          |             Log de auditoria              |
+          | linea inalterable escrita automaticamente |

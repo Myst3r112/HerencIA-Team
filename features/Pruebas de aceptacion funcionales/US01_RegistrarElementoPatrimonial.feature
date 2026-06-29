@@ -5,28 +5,29 @@ Feature: Registro de elemento patrimonial
     quiero registrar un elemento patrimonial indicando su tipo, datos principales y valor estimado, 
     para disponer de una visión financiera real de mis activos y planificar mi sucesión con información confiable.
 
-    Scenario: E1 - Registro exitoso 
+    Scenario Outline: E1 - Registro exitoso 
         Given que inicio un registro, 
         When completo los campos obligatorios 
         And guardo, 
         Then el sistema incorpora el elemento al inventario. 
+        
         # Input:
         # - Tipo de elemento: Selección en menú desplegable.
         # - Datos principales: Campo de texto libre.
         # - Valor estimado: Campo numérico monetario.
         Examples: INPUT
-            |           Tipo de elemento        |   Datos principales   |       Valor estimado      |
-            |   Selección en menú desplegable   | Campo de texto libre  | Campo numérico monetario  |
+            | Tipo de elemento |   Datos principales  | Valor estimado  |
+            | menú desplegable | Campo de texto libre | Campo monetario |
         
         # Output:
         # - Mensaje: Alerta flotante tipo Toast (“Elemento patrimonial registrado exitosamente”).
         # - Elemento registrado: Registro persistido en el inventario con ID único.
         # - Resumen financiero: Valor total recalculado en pantalla.
         Examples: OUTPUT
-            |           Mensaje (Alerta flotante)           |               Elemento registrado                 |           Resumen financiero          |
-            |“Elemento patrimonial registrado exitosamente” | Registro persistido en el inventario con ID único |   Valor total recalculado en pantalla |        
+            |    Mensaje      |  Elemento registrado   |   Resumen financiero    |
+            | Alerta flotante | Registro en inventario | Valor total recalculado |        
 
-    Scenario: E2 - Error en registro 
+    Scenario Outline: E2 - Error en registro 
         Given que ingreso un valor inválido o dejo un campo obligatorio vacío, 
         When intento guardar, 
         Then el sistema muestra el error 
@@ -37,14 +38,14 @@ Feature: Registro de elemento patrimonial
         # - Valor estimado: Caracteres no numéricos.
         # - Acción: Clic en el botón “Guardar”
         Examples: INPUT
-            |   Tipo de elemento    |       Valor estimado      |           Acción           |
-            | Sin selección / vacío | Caracteres no numéricos.  | Clic en el botón “Guardar” |
+            |   Tipo de elemento    |       Valor estimado    |     Acción      |
+            | Sin selección / vacío | Caracteres no numéricos | botón “Guardar” |
 
         # Output:
         # - Mensaje de error: Texto de validación debajo de los campos vacíos.
         # - Mensaje de formato: Texto de advertencia de tipo de dato (“Ingrese un monto numérico valido”).
         # - Estado: Bloqueo del envió a la base de datos.
         Examples: OUTPUT
-            |               Mensaje de error                    |       Mensaje de formato            |                Estado                 |
-            | Texto de validación debajo de los campos vacíos.  | “Ingrese un monto numérico valido”  | Bloqueo del envió a la base de datos. |
+            |       Mensaje de error        |       Mensaje de formato            |     Estado       |
+            | Texto debajo en campos vacíos | “Ingrese un monto numérico valido”  | Bloqueo de envió |
           

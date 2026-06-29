@@ -10,19 +10,31 @@ Feature: Disponibilidad del inventario patrimonial
         When se calcula la disponibilidad del inventario patrimonial, 
         Then el servicio alcanza como mínimo un 99.5 % de disponibilidad en el entorno productivo.
 
-        Input:
-        - Uptime del servidor: Registros continuos de pings de estado.
+        # Input:
+        # - Uptime del servidor: Registros continuos de pings de estado.
+        Examples: INPUT
+            |             Uptime del servidor           |
+            |   Registros continuos de pings de estado. |
 
-        Output:
-        - Métrica de disponibilidad: Indicador de porcentaje total mensual.
+        # Output:
+        # - Métrica de disponibilidad: Indicador de porcentaje total mensual.
+        Examples: OUTPUT
+            |         Métrica de disponibilidad         |
+            |   Indicador de porcentaje total mensual   |
 
     Scenario: E2 - Registro de incidente exitoso 
         Given que se detecta una interrupción del servicio, 
         When el sistema registra el incidente, 
         Then conserva la fecha, la duración y el servicio afectado.
 
-        Input:
-        - Detección de caída: Alerta de inactividad disparada automáticamente ante la caída de un servidor web.
+        # Input:
+        # - Detección de caída: Alerta de inactividad disparada automáticamente ante la caída de un servidor web.
+        Examples: INPUT
+            |               Detección de caída                  |
+            | Alerta de inactividad ante la caída del servidor  |
 
-        Output:
-        - Registro de incidente (Log): Nueva fila añadida de manera automática al historial inalterable de fallas técnicas.
+        # Output:
+        # 1- Registro de incidente (Log): Nueva fila añadida de manera automática al historial inalterable de fallas técnicas.
+        Examples: OUTPUT
+            |        Registro de incidente        |
+            | falla tecnica agregada al historial |
