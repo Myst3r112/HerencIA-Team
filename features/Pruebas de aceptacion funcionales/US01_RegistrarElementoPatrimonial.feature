@@ -49,3 +49,4 @@ Feature: Registro de elemento patrimonial
             |       Mensaje de error        |       Mensaje de formato            |     Estado       |
             | Texto debajo en campos vacíos | “Ingrese un monto numérico valido”  | Bloqueo de envió |
           
+

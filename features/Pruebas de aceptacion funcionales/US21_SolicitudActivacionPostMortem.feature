@@ -49,3 +49,5 @@ Feature: Crear solicitud de activacion post mortem
         Examples: OUTPUT
             |           Mensaje de error             |              Indicador visual               |       Estado       |
             | Notificación de validación en pantalla | Recuadro parpadeante o con borde color rojo | Bloqueo de trámite |
+
+

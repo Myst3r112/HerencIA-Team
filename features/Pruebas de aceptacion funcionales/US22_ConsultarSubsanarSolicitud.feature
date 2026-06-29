@@ -45,3 +45,4 @@ Feature: Consultar y subsanar solicitud de activacion
             |              Registro de respuesta              |   Estado modificado   |               Alerta al asesor                 |
             | Reemplazo de archivo dañado por el nuevo valido | Transición del estado | notificación al abogado asignado al expediente |
 
+

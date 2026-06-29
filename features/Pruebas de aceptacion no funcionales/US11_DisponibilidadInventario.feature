@@ -38,3 +38,5 @@ Feature: Disponibilidad del inventario patrimonial
         Examples: OUTPUT
             |        Registro de incidente        |
             | falla tecnica agregada al historial |
+
+

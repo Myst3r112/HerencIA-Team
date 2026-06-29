@@ -46,3 +46,5 @@ Feature: Consultar y actualizar inventario consolidado
         Examples: OUTPUT
             | Registro modificado                 | Mensaje                 | Resumen patrimonial actualizado |
             | Sobreescritura del dato del usuario | Alerta de actualización |    monto general en pantalla    |
+
+

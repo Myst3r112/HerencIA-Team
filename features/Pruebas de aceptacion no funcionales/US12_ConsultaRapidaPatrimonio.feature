@@ -39,3 +39,5 @@ Feature: Consulta rapida del patrimonio
         Examples: OUTPUT
             |              Indicador visual                 |
             | animación de carga interactiva en la interfaz |
+
+
